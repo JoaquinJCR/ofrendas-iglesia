@@ -6,7 +6,7 @@
     <title>Aportes y Ofrendas</title>
     <style>
         * {
-            box-sizing: border-box; /* Esto evita que los márgenes rompan el diseño */
+            box-sizing: border-box;
         }
         
         body {
@@ -14,44 +14,39 @@
             background-color: #f4f7f6;
             color: #333;
             text-align: center;
-            /* Se añade un pequeño padding al cuerpo de la página */
-            padding: 10px; 
+            padding: 15px 10px;
             margin: 0;
         }
         
         .container {
-            /* ESTO HACE LA MAGIA EN CELULARES */
-            width: 90%; /* Asegura que siempre deje un 5% de margen a cada lado en móviles */
-            max-width: 400px; /* Evita que sea gigantesco en monitores de PC */
-            margin: 40px auto; /* 40px de espacio arriba y abajo, centrado a los lados */
-            
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
             background: white;
-            padding: 35px 25px; /* Más espacio interno para que el texto no toque los bordes blancos */
-            border-radius: 15px; /* Bordes un poco más redondeados y modernos */
+            padding: 30px 20px;
+            border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
         
         h1 { 
             color: #2c3e50; 
-            font-size: 26px; 
+            font-size: 24px; 
             margin-top: 0;
         }
         
-        p { 
-            color: #7f8c8d; 
-            font-size: 15px; 
-            margin-bottom: 25px; 
-        }
-        
         .bank-details {
-            margin-top: 25px;
-            padding-top: 25px;
+            margin-top: 20px;
+            padding-top: 20px;
             border-top: 1px solid #eee;
             text-align: left;
-            font-size: 14.5px; /* Letra un poquito más grande para móviles */
+            font-size: 14.5px;
             background: #f9f9f9;
-            padding: 20px;
+            padding: 20px 15px;
             border-radius: 10px;
+            
+            /* ESTO SOLUCIONA EL CORTE EN CELULARES: Obliga al correo largo a bajar de línea */
+            word-break: break-word; 
+            overflow-wrap: break-word;
         }
         
         .bank-details h3 { 
@@ -63,14 +58,14 @@
         }
         
         .bank-details p {
-            margin: 8px 0; /* Más separación entre cada dato bancario */
+            margin: 8px 0;
             color: #333;
         }
 
         .btn-copy {
             display: block;
             width: 100%;
-            padding: 14px; /* Botón más alto, más fácil de tocar con el dedo */
+            padding: 14px;
             margin-top: 20px;
             border: 2px solid #2980b9;
             background-color: transparent;
@@ -93,15 +88,14 @@
             color: white;
         }
         
-        /* Estilo especial para los textos de Whatsapp y Email */
         .contact-info {
             margin-top: 20px;
             text-align: center;
         }
         
         .contact-info h3 {
-            font-size: 14px;
-            color: #7f8c8d;
+            font-size: 15px;
+            color: #333;
             margin-bottom: 10px;
         }
     </style>
@@ -122,7 +116,7 @@
             <button class="btn-copy" id="btnOfrenda" onclick="copiarOfrenda()">📋 Copiar Datos</button>
 
             <div class="contact-info">
-                <h3>Recuerda enviar tu comprobante a:</h3>
+                <h3><strong>Recuerda enviar tu comprobante a:</strong></h3>
                 <p><strong>Email:</strong> finanzascasadefeyesperanza@gmail.com</p>
                 <p><strong>WhatsApp:</strong> +56 9 7684 9377</p>
             </div>
@@ -140,14 +134,13 @@
             <button class="btn-copy" id="btnDiezmo" onclick="copiarDiezmo()">📋 Copiar Datos</button>
 
             <div class="contact-info">
-                <h3>Recuerda enviar tu comprobante a:</h3>
+                <h3><strong>Recuerda enviar tu comprobante a:</strong></h3>
                 <p><strong>Email:</strong> finanzascasadefeyesperanza@gmail.com</p>
                 <p><strong>WhatsApp:</strong> +56 9 9201 5011</p>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT PARA COPIAR AL PORTAPAPELES -->
     <script>
         const textoOfrenda = "Nombre: Andrea Maturana\nRUT: 16.307.345-5\nBanco: BancoEstado\nTipo de cuenta: Cuenta Rut\nNúmero de cuenta: 163073455\nCorreo: finanzascasadefeyesperanza@gmail.com";
         
@@ -157,11 +150,9 @@
             navigator.clipboard.writeText(texto).then(() => {
                 const btn = document.getElementById(idBoton);
                 
-                // Cambiar el botón visualmente
                 btn.innerHTML = "✅ ¡Copiado!";
                 btn.classList.add("copiado");
                 
-                // Volver a la normalidad después de 2.5 segundos
                 setTimeout(() => {
                     btn.innerHTML = "📋 Copiar Datos";
                     btn.classList.remove("copiado");
