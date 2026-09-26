@@ -5,69 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aportes y Ofrendas</title>
     <style>
+        * {
+            box-sizing: border-box; /* Esto evita que los márgenes rompan el diseño */
+        }
+        
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f7f6;
             color: #333;
             text-align: center;
-            padding: 20px;
+            /* Se añade un pequeño padding al cuerpo de la página */
+            padding: 10px; 
             margin: 0;
         }
+        
         .container {
-            max-width: 400px;
-            margin: 0 auto;
+            /* ESTO HACE LA MAGIA EN CELULARES */
+            width: 90%; /* Asegura que siempre deje un 5% de margen a cada lado en móviles */
+            max-width: 400px; /* Evita que sea gigantesco en monitores de PC */
+            margin: 40px auto; /* 40px de espacio arriba y abajo, centrado a los lados */
+            
             background: white;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            padding: 35px 25px; /* Más espacio interno para que el texto no toque los bordes blancos */
+            border-radius: 15px; /* Bordes un poco más redondeados y modernos */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
-        h1 { color: #2c3e50; font-size: 24px; }
-        p { color: #7f8c8d; font-size: 15px; margin-bottom: 25px; }
+        
+        h1 { 
+            color: #2c3e50; 
+            font-size: 26px; 
+            margin-top: 0;
+        }
+        
+        p { 
+            color: #7f8c8d; 
+            font-size: 15px; 
+            margin-bottom: 25px; 
+        }
         
         .bank-details {
-            margin-top: 20px;
-            padding-top: 20px;
+            margin-top: 25px;
+            padding-top: 25px;
             border-top: 1px solid #eee;
             text-align: left;
-            font-size: 14px;
+            font-size: 14.5px; /* Letra un poquito más grande para móviles */
             background: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
         }
+        
         .bank-details h3 { 
             margin-top: 0; 
-            font-size: 16px; 
+            font-size: 17px; 
             color: #2c3e50; 
             text-align: center;
+            margin-bottom: 15px;
         }
+        
         .bank-details p {
-            margin: 5px 0;
+            margin: 8px 0; /* Más separación entre cada dato bancario */
             color: #333;
         }
 
-        /* Estilos para el botón de copiar */
         .btn-copy {
             display: block;
             width: 100%;
-            padding: 12px;
-            margin-top: 15px;
+            padding: 14px; /* Botón más alto, más fácil de tocar con el dedo */
+            margin-top: 20px;
             border: 2px solid #2980b9;
             background-color: transparent;
             color: #2980b9;
             border-radius: 8px;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
         }
+        
         .btn-copy:hover {
             background-color: #2980b9;
             color: white;
         }
+        
         .btn-copy.copiado {
             background-color: #27ae60;
             border-color: #27ae60;
             color: white;
+        }
+        
+        /* Estilo especial para los textos de Whatsapp y Email */
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -82,13 +117,15 @@
             <p><strong>Tipo de Cuenta:</strong> Cuenta Rut</p>
             <p><strong>Número:</strong> 163073455</p>
             <p><strong>RUT:</strong> 16.307.345-5</p>
-            <p><strong>Nombre:</strong> Andrea Maturana </p>
+            <p><strong>Nombre:</strong> Andrea Maturana</p>
             
-            <button class="btn-copy" id="btnOfrenda" onclick="copiarOfrenda()">📋 Copiar Datos de Ofrenda</button>
+            <button class="btn-copy" id="btnOfrenda" onclick="copiarOfrenda()">📋 Copiar Datos</button>
 
-            <h3 style="margin-top: 15px;">Recuerda enviar tu comprobante a:</h3>
-            <p><strong>Email:</strong> finanzascasadefeyesperanza@gmail.com</p>
-            <p><strong>Whatsapp:</strong> +56 9 7684 9377</p>
+            <div class="contact-info">
+                <h3>Recuerda enviar tu comprobante a:</h3>
+                <p><strong>Email:</strong> finanzascasadefeyesperanza@gmail.com</p>
+                <p><strong>WhatsApp:</strong> +56 9 7684 9377</p>
+            </div>
         </div>
 
         <!-- SECCIÓN DIEZMO -->
@@ -98,19 +135,20 @@
             <p><strong>Tipo de Cuenta:</strong> Cuenta Vista</p>
             <p><strong>Número:</strong> 1716069</p>
             <p><strong>RUT:</strong> 15.415.087-0</p>
-            <p><strong>Nombre:</strong> Pastor Victor Tapia Venegas </p>
+            <p><strong>Nombre:</strong> Pastor Victor Tapia Venegas</p>
             
-            <button class="btn-copy" id="btnDiezmo" onclick="copiarDiezmo()">📋 Copiar Datos de Diezmo</button>
+            <button class="btn-copy" id="btnDiezmo" onclick="copiarDiezmo()">📋 Copiar Datos</button>
 
-            <h3 style="margin-top: 15px;">Recuerda enviar tu comprobante a:</h3>
-            <p><strong>Email:</strong> finanzascasadefeyesperanza@gmail.com</p>
-            <p><strong>Whatsapp:</strong> +56 9 9201 5011</p>
+            <div class="contact-info">
+                <h3>Recuerda enviar tu comprobante a:</h3>
+                <p><strong>Email:</strong> finanzascasadefeyesperanza@gmail.com</p>
+                <p><strong>WhatsApp:</strong> +56 9 9201 5011</p>
+            </div>
         </div>
     </div>
 
     <!-- SCRIPT PARA COPIAR AL PORTAPAPELES -->
     <script>
-        // Textos preparados para ser copiados
         const textoOfrenda = "Nombre: Andrea Maturana\nRUT: 16.307.345-5\nBanco: BancoEstado\nTipo de cuenta: Cuenta Rut\nNúmero de cuenta: 163073455\nCorreo: finanzascasadefeyesperanza@gmail.com";
         
         const textoDiezmo = "Nombre: Pastor Victor Tapia Venegas\nRUT: 15.415.087-0\nBanco: Banco Chile\nTipo de cuenta: Cuenta Vista\nNúmero de cuenta: 1716069\nCorreo: finanzascasadefeyesperanza@gmail.com";
@@ -118,17 +156,16 @@
         function copiarAlPortapapeles(texto, idBoton) {
             navigator.clipboard.writeText(texto).then(() => {
                 const btn = document.getElementById(idBoton);
-                const textoOriginal = btn.innerHTML;
                 
                 // Cambiar el botón visualmente
                 btn.innerHTML = "✅ ¡Copiado!";
                 btn.classList.add("copiado");
                 
-                // Volver a la normalidad después de 2 segundos
+                // Volver a la normalidad después de 2.5 segundos
                 setTimeout(() => {
-                    btn.innerHTML = textoOriginal;
+                    btn.innerHTML = "📋 Copiar Datos";
                     btn.classList.remove("copiado");
-                }, 2000);
+                }, 2500);
             }).catch(err => {
                 console.error('Error al copiar: ', err);
                 alert("Tu navegador no permite copiar automáticamente. Por favor, selecciona el texto y cópialo de forma manual.");
