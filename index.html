@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aportes y Ofrendas</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #2c3e50; font-size: 24px; }
+        p { color: #7f8c8d; font-size: 15px; margin-bottom: 25px; }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            box-sizing: border-box;
+            transition: opacity 0.2s;
+        }
+        .btn:hover { opacity: 0.9; }
+        
+        .btn-diezmo { background-color: #27ae60; }
+        .btn-ofrenda { background-color: #2980b9; }
+        
+        .bank-details {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            text-align: left;
+            font-size: 14px;
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .bank-details h3 { margin-top: 0; font-size: 16px; color: #2c3e50; text-align: center;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido</h1>
+        <p>Selecciona el tipo de aporte que deseas realizar. Serás redirigido a la pasarela de pago seguro.</p>
+        
+        <!-- Reemplaza el href="#" con tus links de MercadoPago o Flow -->
+        <a href="#" class="btn btn-diezmo">Diezmar (Webpay/Tarjetas)</a>
+        <a href="#" class="btn btn-ofrenda">Ofrendar (Webpay/Tarjetas)</a>
+        
+        <div class="bank-details">
+            <h3>Datos para Transferencia Directa</h3>
+            <p><strong>Banco:</strong> BancoEstado (o el que utilices)</p>
+            <p><strong>Tipo de Cuenta:</strong> Cuenta Corriente</p>
+            <p><strong>Número:</strong> 123456789</p>
+            <p><strong>RUT:</strong> 77.777.777-7</p>
+            <p><strong>Nombre:</strong> Iglesia XYZ</p>
+            <p><strong>Email:</strong> finanzas@iglesia.com</p>
+        </div>
+    </div>
+</body>
+</html>
